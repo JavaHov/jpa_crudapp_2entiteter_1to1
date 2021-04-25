@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="onetoonephonebook" epkg="domain" v="5.4.3" rws="_16191684635512" cws="_16191684635512" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_16191684635491" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity compositePrimaryKeyClass="PersonPK" abs="false" class="Person" v="true" jbn="false" xre="false" m="false" rootElement="_16191684635491" id="_16191687269003">
+        <ath>Me</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="Name" id="_161916912930110">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_16191687346616" v="true" xvt="" name="phone" id="_161916957350912">
+                <xwm/>
+                <xm/>
+            </one-to-one>
+            <id attribute-type="int" v="true" xvt="" name="id" id="_16191687269484">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Person.findAll">
+            <query>Select e from Person e</query>
+        </nq>
+        <nq e="false" name="Person.findByName">
+            <query>Select p from Person p where p.Name=:Name</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="PhonePK" abs="false" class="Phone" v="true" jbn="false" xre="false" m="false" rootElement="_16191684635491" id="_16191687346616">
+        <ath>Me</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="operator" id="_16191690267019">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="String" v="true" xvt="" name="phoneNumber" id="_16191687346617">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Phone.findAll">
+            <query>Select e from Phone e</query>
+        </nq>
+        <nq e="false" name="Phone.findByOperator">
+            <query>Select p from Phone p where p.operator=:operator</query>
+        </nq>
+    </entity>
+    <wsl>
+        <ws n="Main" id="_16191684635512">
+            <i ref="_16191687346616" x="357" y="147"/>
+            <i ref="_16191687269003" x="93" y="147"/>
+        </ws>
+    </wsl>
+</entity-mappings>
